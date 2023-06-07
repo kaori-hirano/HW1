@@ -1,0 +1,79 @@
+---
+title: "HW1: GitHub and Errors"
+author: "Insert your name here"
+date: "Insert date here"
+format: pdf
+---
+
+## Q1
+
+```{r line-by-line}
+#| error: true
+mpg %>%
+  filter(class == "subcompact") %>%
+  group_by(drv)
+  summarize(median_cty_mpg = median(cty),
+            sd_cty_mpg = sd(cty),
+            avg_cty_mpg = average(cty))
+```
+
+Remove this text, and add your narrative description of the process for
+answering Question 1 here.
+
+## Q2
+
+```{r scatter-plot}
+#| error: true
+mpg %>% 
+  ggplot(aes(x = highway, y = cty)) %>% 
+  geom_point() +
+  labs(x = "Highway", ylabel = "City", 
+       title = "Miles per Gallon - Highway vs City")
+```
+
+Remove this text, and add your narrative description of the process for
+answering Question 2 here.
+
+## Q3
+
+```{r vectors}
+#| error: true
+vec1 <- c(1, 2, 3)
+vec2 <- (3, -2, 2.305)
+
+vec2 %* vec
+```
+
+Remove this text, and add your narrative description of the process for
+answering Question 3 here.
+
+## Q4 
+
+```{r avg_avg}
+#| error: true
+mean(mpg_fl$mean_hwy, mpg_fl$mean_cty)
+
+mpg_fl <- mpg %>% 
+  groupby(Fl) %>% 
+  summary(
+    mean_hwy, mean_cty = mean(hwy, cty)
+  )
+```
+
+
+Remove this text, and add your narrative description of the process for
+answering Question 4 here.
+
+## Q5 
+
+```{r matrix}
+#| error: true
+a <- c(1,2,3)
+b <- c("a","b","c")
+d <- cbind(a,b) # Put them together
+d[,1] + 1
+```
+
+
+Remove this text, and add your narrative description of the process for
+answering Question 5 here.
