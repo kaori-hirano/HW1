@@ -1,13 +1,14 @@
 ---
 title: "HW1: GitHub and Errors"
-author: "Insert your name here"
-date: "Insert date here"
+author: "kaori hirano"
+date: "6 8 2023"
 format: pdf
 ---
 
 ## Q1
 
 ```{r line-by-line}
+?mpg
 #| error: true
 mpg %>%
   filter(class == "subcompact") %>%
