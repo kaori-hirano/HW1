@@ -13,16 +13,17 @@ library(tidyverse)
 library(dplyr)
 library(ggplot2)
 #| error: true
+??summarize
 mpg %>% filter(class == "subcompact") %>%
   group_by(drv)
-  summarize(median_cty_mpg = median(cty),
+  summarize(mpg, median_cty_mpg = median(cty),
             sd_cty_mpg = sd(cty),
-            avg_cty_mpg = average(cty))
+            avg_cty_mpg = mean(cty))
 ```
 
-Remove this text, and add your narrative description of the process for
-answering Question 1 here.
+the pipe function is part of dplyr so we need to load that before using it, so I added that, as well as ggplot2 because it showed up later and tidyverse because I couldn't remember if %>% was part of dplyr or tidyverse (after referencing the documentation it is from dplyr).  
 
+First I looked up summarize because I wasn't familiar with it. I saw you needed a table to draw the information from, which would be mpg, so I added mpg. I put a c() in front of the data, but thought it made more sense based on the wording to have each number be a row column instead of a row. 
 ## Q2
 
 ```{r scatter-plot}
