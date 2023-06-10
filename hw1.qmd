@@ -8,10 +8,12 @@ format: pdf
 ## Q1
 
 ```{r line-by-line}
-?mpg
+??mpg
+library(tidyverse)
+library(dplyr)
+library(ggplot2)
 #| error: true
-mpg %>%
-  filter(class == "subcompact") %>%
+mpg %>% filter(class == "subcompact") %>%
   group_by(drv)
   summarize(median_cty_mpg = median(cty),
             sd_cty_mpg = sd(cty),
@@ -25,8 +27,10 @@ answering Question 1 here.
 
 ```{r scatter-plot}
 #| error: true
+
+??mpg
 mpg %>% 
-  ggplot(aes(x = highway, y = cty)) %>% 
+  ggplot(aes(x = hwy, y = cty)) + 
   geom_point() +
   labs(x = "Highway", ylabel = "City", 
        title = "Miles per Gallon - Highway vs City")
