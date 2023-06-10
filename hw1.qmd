@@ -44,9 +44,9 @@ answering Question 2 here.
 ```{r vectors}
 #| error: true
 vec1 <- c(1, 2, 3)
-vec2 <- (3, -2, 2.305)
+vec2 <- c(3, -2, 2.305)
 
-vec2 %* vec
+Map('*', vec2, vec1)
 ```
 
 Remove this text, and add your narrative description of the process for
