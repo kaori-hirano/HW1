@@ -36,8 +36,7 @@ mpg %>%
        title = "Miles per Gallon - Highway vs City")
 ```
 
-Remove this text, and add your narrative description of the process for
-answering Question 2 here.
+Was missing + so I added the + instead of %>% which is what is used for ggplots. 
 
 ## Q3
 
@@ -49,25 +48,29 @@ vec2 <- c(3, -2, 2.305)
 Map('*', vec2, vec1)
 ```
 
-Remove this text, and add your narrative description of the process for
-answering Question 3 here.
+The text was missing the concatenate function so I added that. you can't just have a bunch of numbers strung together without it. 
+Then the %* didn't make sense so I added Map which would multiply each element. 
+Then I added a 1 to call a variable that was previously defined because you can't randomly reference variables that don't exist. 
 
 ## Q4 
 
 ```{r avg_avg}
 #| error: true
+library(matrixStats)
+rowMeans2(mpg_fl, rows = c('hwy', 'cty'))
+# not really sure whats going on here     
 mean(mpg_fl$mean_hwy, mpg_fl$mean_cty)
-
+  
 mpg_fl <- mpg %>% 
-  groupby(Fl) %>% 
+  group_by(fl) %>% 
   summary(
     mean_hwy, mean_cty = mean(hwy, cty)
   )
+
+
 ```
 
-
-Remove this text, and add your narrative description of the process for
-answering Question 4 here.
+for the second part I look at the documentation, saw it needed and underscore. then tried to figure out what F1 was doing in the code, then realized it was supposed to be fl so I changed that. 
 
 ## Q5 
 
@@ -76,9 +79,7 @@ answering Question 4 here.
 a <- c(1,2,3)
 b <- c("a","b","c")
 d <- cbind(a,b) # Put them together
-d[,1] + 1
+as.numeric(d[1]) + 1
 ```
 
-
-Remove this text, and add your narrative description of the process for
-answering Question 5 here.
+when the two were combined into d, everything became a string because letters can't be numbers. to do addition you need numbers, so I made the element we needed to add 1 to into a number using as.numeric. 
