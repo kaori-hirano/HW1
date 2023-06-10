@@ -8,13 +8,13 @@ format: pdf
 ## Q1
 
 ```{r line-by-line}
-??mpg
+# ??mpg
 library(tidyverse)
 library(dplyr)
 library(ggplot2)
 #| error: true
 ??summarize
-mpg %>% filter(class == "subcompact") %>%
+mpg %>% filter(class == "subcompact") %>% # gets stats for city mpg for different types of trains 
   group_by(drv)
   summarize(mpg, median_cty_mpg = median(cty),
             sd_cty_mpg = sd(cty),
@@ -30,14 +30,14 @@ First I looked up summarize because I wasn't familiar with it. I saw you needed 
 #| error: true
 
 ??mpg
-mpg %>% 
+mpg %>%  # scatterplot of city mpg vs highway mpg
   ggplot(aes(x = hwy, y = cty)) + 
   geom_point() +
   labs(x = "Highway", ylabel = "City", 
        title = "Miles per Gallon - Highway vs City")
 ```
 
-Was missing + so I added the + instead of %>% which is what is used for ggplots. 
+Was missing + so I added the + instead of %>% which is what is used for ggplots. This was clear based on the documentation for ggplot but also the error message
 
 ## Q3
 
@@ -46,7 +46,7 @@ Was missing + so I added the + instead of %>% which is what is used for ggplots.
 vec1 <- c(1, 2, 3)
 vec2 <- c(3, -2, 2.305)
 
-Map('*', vec2, vec1)
+Map('*', vec2, vec1) #multiplies vectors
 ```
 
 The text was missing the concatenate function so I added that. you can't just have a bunch of numbers strung together without it. 
@@ -57,9 +57,10 @@ Then I added a 1 to call a variable that was previously defined because you can'
 
 ```{r avg_avg}
 #| error: true
-library(matrixStats)
+library(matrixStats) 
 rowMeans2(mpg_fl, rows = c('hwy', 'cty'))
 # not really sure whats going on here     
+#avg mgp on highway vs city for dif fuel types
 mean(mpg_fl$mean_hwy, mpg_fl$mean_cty)
   
 mpg_fl <- mpg %>% 
@@ -80,7 +81,7 @@ for the second part I look at the documentation, saw it needed and underscore. t
 a <- c(1,2,3)
 b <- c("a","b","c")
 d <- cbind(a,b) # Put them together
-as.numeric(d[1]) + 1
+as.numeric(d[1]) + 1 # makes numerical and adds 1
 ```
 
 when the two were combined into d, everything became a string because letters can't be numbers. to do addition you need numbers, so I made the element we needed to add 1 to into a number using as.numeric. 
