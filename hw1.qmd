@@ -58,10 +58,9 @@ Then I added a 1 to call a variable that was previously defined because you can'
 ```{r avg_avg}
 #| error: true
 library(matrixStats) 
-mpg_fl[1:80]
+# mpg_fl[1:80]
 cbind(mpg_fl[52], mpg_fl[46])
 #avg mpg on highway vs city for dif fuel types
-mean(mpg_fl$mean_hwy, mpg_fl$mean_cty)
   
 mpg_fl <- mpg %>% 
   group_by(fl) %>% 
